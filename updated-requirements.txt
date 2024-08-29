@@ -1,0 +1,6 @@
+selenium==4.10.0
+pytest==7.4.0
+requests==2.31.0
+locust==2.15.1
+webdriver-manager==3.8.6
+configparser==5.3.0

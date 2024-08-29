@@ -1,0 +1,9 @@
+[DEFAULT]
+base_url = https://example-greengrocer-site.com
+browser = chrome
+
+[TEST]
+base_url = https://test.example-greengrocer-site.com
+
+[PROD]
+base_url = https://www.example-greengrocer-site.com
