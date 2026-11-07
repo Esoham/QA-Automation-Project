@@ -1,9 +1,15 @@
-name: CommerceQA - Playwright, Selenium, API, AI evals
+name: QA Portfolio - FarmFresh, Playwright, Selenium, API, AI evals
 on:
   push:
     paths:
       - 'commerceqa/**'
+      - 'app.py'
+      - 'templates/**'
+      - 'static/**'
+      - 'test_routes.py'
+      - 'test_app.py'
       - 'tests/**'
+      - 'docs/FARMFRESH_SPRINT_AND_TEST_STRATEGY.md'
       - 'evals/**'
       - 'pytest.ini'
       - 'requirements-dev.txt'

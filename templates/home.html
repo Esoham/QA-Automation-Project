@@ -1,6 +1,13 @@
 {% extends "base.html" %}
-
 {% block content %}
-<h2>{{ content }}</h2>
-<p>Discover the freshest and highest quality farm products, rigorously tested to ensure premium quality for your table.</p>
+<section class="hero">
+  <div class="eyebrow">An independently built QA practice application</div>
+  <h1>{{ content }}</h1>
+  <p>Browse fictional food products, filter the catalog, inspect details and test a sample local cart.</p>
+  <a class="primary-link" href="{{ url_for('product_list') }}">Explore the product catalog</a>
+</section>
+<section class="panel">
+  <h2>What this lab demonstrates</h2>
+  <p>API contract tests, browser automation, boundary tests, negative testing, regression checks and defect documentation.</p>
+</section>
 {% endblock %}

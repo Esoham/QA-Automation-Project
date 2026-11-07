@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+  <div class="eyebrow">About the demo</div>
+  <h1>About FarmFresh Tester</h1>
+  <p>FarmFresh is a fictional product catalog designed to practice quality assurance in an Agile workflow.</p>
+  <p>Product browsing and the on-page cart are simulated. The application does not accept orders or process payments.</p>
+  <p><a href="{{ url_for('product_list') }}">Browse products</a></p>
+</section>
+{% endblock %}
