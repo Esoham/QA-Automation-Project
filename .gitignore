@@ -9,3 +9,8 @@ traces/
 .env
 coverage.xml
 junit.xml
+.coverage
+.coverage.*
+htmlcov/
+node_modules/
+*.egg-info/
