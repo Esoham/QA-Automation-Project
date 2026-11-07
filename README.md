@@ -40,6 +40,20 @@ Open `http://127.0.0.1:8000/` or inspect API documentation at `http://127.0.0.1:
 
 Run only the Playwright suite with `python -m pytest -m ui -q`, or only non-browser cases with `python -m pytest -m "not ui" -q`. Browser tests always target a localhost fixture and never submit data to external services. To use an existing system Chromium binary, set `CHROMIUM_PATH` to its full path.
 
+
+## Selenium 4 WebDriver comparison
+
+The repository also demonstrates Chrome WebDriver and Page Object Model:
+`selenium_pages/catalog_page.py` centralizes navigation and explicit waits,
+and `tests/test_selenium.py` checks search, quote prices and stock exceptions.
+Each test uses a fresh browser. No fixed sleeps; assertions remain in the tests.
+
+Run: `python -m pytest -m selenium -q`.
+On a workstation Selenium Manager may configure ChromeDriver; in CI a separate job uses preinstalled Chrome and Selenium Manager. Do not call Selenium
+tests verified until that CI check succeeds.
+
+See [the 4-week QA/SDET study plan](docs/QA_SDET_STUDY_GUIDE.md).
+
 ## AI-testing portfolio evidence
 
 `evals/golden_cases.json` contains eight **human-curated synthetic** test cases; `evals/sample_model_outputs.json` is a matching set of **manually authored example outputs**. The evaluator validates product citations and structured claims. Run it against your own model response file with:
