@@ -1,0 +1,42 @@
+name: CommerceQA - API, Playwright, AI evals
+on:
+  push:
+    paths:
+      - 'commerceqa/**'
+      - 'tests/**'
+      - 'evals/**'
+      - 'pytest.ini'
+      - 'requirements-dev.txt'
+      - '.github/workflows/commerceqa-ci.yml'
+  pull_request:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+          python -m playwright install --with-deps chromium
+      - name: Run API, browser, eval-grader tests
+        run: python -m pytest -q --junitxml=results/junit.xml
+        env:
+          QA_ARTIFACTS: results/traces
+      - name: Run synthetic model-response evals
+        run: python -m evals.grade --report results/ai-eval-report.json
+      - name: Upload reproducible test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: commerceqa-test-evidence
+          path: results/
+          if-no-files-found: ignore
+          retention-days: 7
