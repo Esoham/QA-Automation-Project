@@ -51,16 +51,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install Selenium and Chromium
+      - name: Install Python dependencies and verify Chrome
         run: |
           python -m pip install -r requirements-dev.txt
-          sudo apt-get update -qq
-          sudo apt-get install -y chromium chromium-driver
+          command -v google-chrome
+          google-chrome --version
       - name: Run Selenium Chrome smoke tests
         run: python -m pytest -m selenium -q --junitxml=results/selenium-junit.xml
-        env:
-          SELENIUM_CHROME_BINARY: /usr/bin/chromium
-          SELENIUM_DRIVER_PATH: /usr/bin/chromedriver
       - name: Upload Selenium test report
         if: always()
         uses: actions/upload-artifact@v4
