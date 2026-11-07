@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+  <h1>Product not found</h1>
+  <p>That product does not exist in this demonstration catalog.</p>
+  <a href="{{ url_for('product_list') }}">Back to products</a>
+</section>
+{% endblock %}

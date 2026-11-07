@@ -4,6 +4,14 @@
 
 A working QA engineering portfolio lab built around a **fictional B2B industrial catalog**. It demonstrates browser automation, HTTP API testing, regression suites, negative/boundary tests, basic security checks, and AI-response evaluations. This is a test fixture, **not** a commercial e-commerce service or a deployed AI model.
 
+## Two real QA practice applications in this repository
+
+**FarmFresh Tester (restored original Flask app):** Search and filter a fictional food catalog, view product detail pages and use a visible local cart. The original broken links and stale tests have been repaired. Product data is rendered with safe text DOM APIs rather than interpolated into innerHTML. Run locally with `python -m flask --app app run`, then open `http://127.0.0.1:5000/products`.
+
+**CommerceQA (new B2B industrial demo):** Playwright + Selenium + API testing and an offline AI-answer evaluation harness. See instructions below.
+
+FarmFresh tests live in `tests/test_farmfresh_api.py` and `tests/test_farmfresh_ui.py`; historical root smoke tests (`test_routes.py`, `test_app.py`) are also fixed and can be run explicitly. The CI suite runs FarmFresh and CommerceQA together. See [FarmFresh Agile sprint, acceptance criteria, and defect log](docs/FARMFRESH_SPRINT_AND_TEST_STRATEGY.md).
+
 ## Business scenario
 An industrial buyer must find the correct component by part number or specification, check stock, and request an accurate quote. Errors could cause a wrong-part purchase, delayed job, or misleading availability promise. This QA suite aims to detect those errors before release.
 
