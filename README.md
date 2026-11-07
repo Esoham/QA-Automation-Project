@@ -49,8 +49,7 @@ and `tests/test_selenium.py` checks search, quote prices and stock exceptions.
 Each test uses a fresh browser. No fixed sleeps; assertions remain in the tests.
 
 Run: `python -m pytest -m selenium -q`.
-On a workstation Selenium Manager may configure ChromeDriver; in CI a separate
-job installs matching Chromium and chromedriver. Do not call Selenium
+On a workstation Selenium Manager may configure ChromeDriver; in CI a separate job uses preinstalled Chrome and Selenium Manager. Do not call Selenium
 tests verified until that CI check succeeds.
 
 See [the 4-week QA/SDET study plan](docs/QA_SDET_STUDY_GUIDE.md).
