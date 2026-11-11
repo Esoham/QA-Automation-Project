@@ -1,5 +1,10 @@
 # CommerceQA — Software Test Automation & AI Evaluation Lab
 
+[![CommerceQA CI status](https://github.com/Esoham/QA-Automation-Project/actions/workflows/commerceqa-ci.yml/badge.svg?branch=master)](https://github.com/Esoham/QA-Automation-Project/actions/workflows/commerceqa-ci.yml)
+
+**Recruiter one-click review:** [3 repaired FarmFresh defects](https://esoham.github.io/projects/qa-defects.html) · [Dated CI and local QA evidence](https://esoham.github.io/projects/qa-verification.html) · [AI output QA walkthrough](https://esoham.github.io/projects/ai-qa-evaluation.html) · [Selenium Page Object example](selenium_pages/catalog_page.py).
+
+
 **Portfolio upgrade of the FarmFresh Tester exercise** | Python · Playwright · pytest · FastAPI · GitHub Actions
 
 A working QA engineering portfolio lab built around a **fictional B2B industrial catalog**. It demonstrates browser automation, HTTP API testing, regression suites, negative/boundary tests, basic security checks, and AI-response evaluations. This is a test fixture, **not** a commercial e-commerce service or a deployed AI model.
